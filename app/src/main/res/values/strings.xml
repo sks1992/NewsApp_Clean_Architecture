@@ -9,4 +9,5 @@
     <string name="newsheadline">NewsHeadline</string>
     <string name="news_image">News Image</string>
     <string name="description">DESCRIPTION</string>
+    <string name="for_save_news">for save News</string>
 </resources>

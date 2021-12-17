@@ -5,7 +5,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import sk.sandeep.newsapp.domain.repository.NewsRepository
-import sk.sandeep.newsapp.domain.use_case.GetNewsHeadlinesUseCase
+import sk.sandeep.newsapp.domain.use_case.*
 import javax.inject.Singleton
 
 @Module
@@ -15,6 +15,36 @@ class UseCaseModule {
     @Provides
     fun provideGetNewsHeadlinesUseCaseModule(newsRepository: NewsRepository): GetNewsHeadlinesUseCase {
         return GetNewsHeadlinesUseCase(newsRepository)
+    }
+
+    @Singleton
+    @Provides
+    fun provideGetSearchedNewsUseCaseModule(newsRepository: NewsRepository): GetSearchedNewsUseCase {
+        return GetSearchedNewsUseCase(newsRepository)
+    }
+
+    @Singleton
+    @Provides
+    fun provideSaveNewsUseCase(
+        newsRepository: NewsRepository
+    ): SaveNewsUseCase {
+        return SaveNewsUseCase(newsRepository)
+    }
+
+    @Singleton
+    @Provides
+    fun provideGetSavedNewsUseCase(
+        newsRepository: NewsRepository
+    ): GetSavedNewsUseCase {
+        return GetSavedNewsUseCase(newsRepository)
+    }
+
+    @Singleton
+    @Provides
+    fun provideDeleteSavedNewsUseCase(
+        newsRepository: NewsRepository
+    ): DeleteSavedNewsUseCase {
+        return DeleteSavedNewsUseCase(newsRepository)
     }
 }
 

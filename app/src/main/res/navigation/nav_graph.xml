@@ -18,7 +18,11 @@
         android:id="@+id/infoFragment"
         android:name="sk.sandeep.newsapp.presentation.ui.fragments.InfoFragment"
         android:label="fragment_info"
-        tools:layout="@layout/fragment_info" />
+        tools:layout="@layout/fragment_info" >
+        <argument
+            android:name="selected_article"
+            app:argType="sk.sandeep.newsapp.data.model.Article"/>
+    </fragment>
     <fragment
         android:id="@+id/savedFragment"
         android:name="sk.sandeep.newsapp.presentation.ui.fragments.SavedFragment"

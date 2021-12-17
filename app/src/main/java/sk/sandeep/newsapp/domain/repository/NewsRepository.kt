@@ -15,7 +15,11 @@ interface NewsRepository {
     suspend fun getNewsHeadlines(country: String, page: Int): Resource<ApiResponse>
 
     //to get search result for searchQuery
-    suspend fun getSearchedNews(searchQuery: String): Resource<ApiResponse>
+    suspend fun getSearchedNews(
+        country: String,
+        searchQuery: String,
+        page: Int
+    ): Resource<ApiResponse>
 
     //save news in local dataBase
     suspend fun saveNews(article: Article)

@@ -10,6 +10,12 @@ import sk.sandeep.newsapp.data.model.ApiResponse
 interface NewsRemoteDataSource {
 
     //we are going to define function to communicate newsApiService function getTopHeadlines
-    suspend fun getTopHeadlines(country: String, page :Int):Response<ApiResponse>
+    suspend fun getTopHeadlines(country: String, page: Int): Response<ApiResponse>
+
+    suspend fun getSearchedNews(
+        country: String,
+        searchQuery: String,
+        page: Int
+    ): Response<ApiResponse>
 
 }
